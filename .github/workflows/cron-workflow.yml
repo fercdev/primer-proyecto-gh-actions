@@ -1,6 +1,7 @@
 name: Cronjob example
 
 on: 
+  workflow_dispatch:
   schedule:
     - cron: '*/2 * * * *' # cada 2 min
 
