@@ -1,0 +1,26 @@
+name: Mi primer workflow
+
+on: 
+  push:
+    branches: [ "master" ] 
+
+
+jobs:
+  hello-world:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Run Hello World script
+        run: node index.js
+      - name: show var #referente a variables y secretos
+        run: |
+          echo "This is a variable: ${{ vars.MI_TOKEN }}"
+          echo "This is a variable: ${{ secrets.MI_TOKEN }}"
+      
+  post-hello-world:
+    #needs: hello-world
+    runs-on: ubuntu-latest
+    steps:
+      - name: Post Hello World step
+        run: echo "This is a post Hello World step that runs after the first job."
