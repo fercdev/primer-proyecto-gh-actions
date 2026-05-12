@@ -3,7 +3,7 @@ name: Cronjob example
 on: 
   workflow_dispatch:
   schedule:
-    - cron: '*/2 * * * *' # cada 2 min
+    - cron: '*/5 * * * *' # cada 2 min
 
 jobs:
   cronjob-schedule:
