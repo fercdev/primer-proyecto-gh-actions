@@ -1,0 +1,19 @@
+name: Deploy workflow
+
+on:
+  workflow_run:
+    workflows:
+      - Build workflow
+    types:
+      - completed
+
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+
+    steps:
+      - name: Run Build script
+        run: echo "Deploying application..., workflow 2"

@@ -1,0 +1,19 @@
+name: Build workflow
+
+on:
+  push:
+    branches: [ "master" ]
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run Build script
+        run: node index.js
+
+      - name: Run Build script
+        run: echo "Building application..., workflow 1"

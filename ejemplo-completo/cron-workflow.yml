@@ -3,12 +3,12 @@ name: Cronjob example
 on: 
   workflow_dispatch:
   schedule:
-    - cron: '*/5 * * * *' # cada 2 min
-
+    - cron: '*/5 * * * *' # cada 5 min
+      timezone: 'America/Mexico_City'
 jobs:
   cronjob-schedule:
     runs-on: ubuntu-latest
     
     steps:
       - name: Run Cronjob script
-        run: echo "Ejecutando cronjob cada 2 minutos"
+        run: echo "Ejecutando cronjob cada 5 minutos"
