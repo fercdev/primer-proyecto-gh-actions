@@ -1,0 +1,13 @@
+name: Cronjob example
+
+on: 
+  schedule:
+    - cron: '*/2 * * * *' # cada 2 min
+
+jobs:
+  cronjob-schedule:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Run Cronjob script
+        run: echo "Ejecutando cronjob cada 2 minutos"
